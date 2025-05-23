@@ -1,35 +1,48 @@
 :root {
-    --c1: #fff;
-    --c2: #eee;
-    --c3: #ddd;
-    --c4: #ccc;
-    --c5: #bbb;
-    --c6: #aaa;
-    --c7: #999;
-    --c8: #888;
-    --c9: #777;
-    --c10: #666;
-    --c11: #555;
-    --c12: #444;
-    --c13: #333;
-    --c14: #222;
-    --c15: #111;
-    --c16: #000;
+  --c1: #fff;
+  --c2: #eee;
+  --c3: #ddd;
+  --c4: #ccc;
+  --c5: #bbb;
+  --c6: #aaa;
+  --c7: #999;
+  --c8: #888;
+  --c9: #777;
+  --c10: #666;
+  --c11: #555;
+  --c12: #444;
+  --c13: #333;
+  --c14: #222;
+  --c15: #111;
+  --c16: #000;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    color: var(--c2);
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: var(--c2);
 }
 
 #main {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--c15);
-    position: absolute;
-    overflow: hidden;
-    z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: var(--c15);
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.name {
+  display: flex;
+  margin: auto;
+  padding-top: calc(50vh - 1em);
+  font-size: 4em;
 }
