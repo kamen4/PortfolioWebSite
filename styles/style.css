@@ -42,7 +42,6 @@
 
 .name {
   display: flex;
-  margin: auto;
-  padding-top: calc(50vh - 1em);
+  margin: calc(50vh - 1em) auto 0 auto;
   font-size: 4em;
 }

@@ -22,7 +22,7 @@ $(function() {
     function init() {
         resizeCanvas();
         $win.on('resize', resizeCanvas);
-        $canvas.on('mousemove', onMouseMove);
+        $win.on('mousemove', onMouseMove);
         particles = generateParticles(CFG.N);
         requestAnimationFrame(animate);
     }
