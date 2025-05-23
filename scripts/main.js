@@ -1,6 +1,6 @@
 $(function() {
     const CFG = {
-        N: 200,
+        N: 300,
         R: 2,
         MAX_SPEED: 0.5,
         LINK_DIST: 100,
@@ -14,6 +14,8 @@ $(function() {
     const ctx     = canvas.getContext('2d');
     let particles = [];
     let mouse = { x: null, y: null };
+
+    CFG.N = Math.round($win.height() * $win.width() / (1920*1080/CFG.N));
 
     init();
 
