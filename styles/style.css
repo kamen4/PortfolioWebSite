@@ -1,12 +1,18 @@
 :root {
   color-scheme: light dark;
   font-size: 100%;
+
+  --icon-moon: url("../images/theme/moon.svg");
+  --icon-sun: url("../images/theme/sun.svg");
+  --theme-toggle-size: 50px;
 }
 
+/*----------= MAIN =---------*/
 * {
   margin: 0;
   padding: 0;
   text-decoration: none;
+  box-sizing: border-box;
   color: light-dark(var(--c14), var(--c2));
 }
 
@@ -32,4 +38,73 @@
   margin: calc(50vh - 3rem) auto 0;
   padding: 0 1rem;
   line-height: 1.1;
+}
+
+/*----------= THEME TOGGLE =---------*/
+.theme-toggle > input {
+  display: none;
+}
+
+.theme-toggle {
+  display: flex;
+  position: fixed;
+  left: calc(100% - var(--theme-toggle-size) - 0.5vmax);
+  top: 0.5vmax;
+  width: var(--theme-toggle-size);
+  height: var(--theme-toggle-size);
+  cursor: pointer;
+}
+
+.theme-toggle > .circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--c15);
+  transition: background-color 0.2s ease, filter 0.2s ease;
+  overflow: visible;
+}
+
+.theme-toggle:hover > .circle {
+  filter: brightness(0.8);
+}
+
+.theme-toggle > .circle::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background-color: var(--c1);
+  transition: background-color 0.2s ease, filter 0.2s ease;
+  z-index: 1;
+}
+
+.theme-toggle:hover > .circle::after {
+  filter: brightness(1.1);
+}
+
+.theme-toggle > .circle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  background-image: var(--icon-sun);
+  transition: background-image 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle > input:checked + .circle {
+  background-color: var(--c1);
+}
+
+.theme-toggle > input:checked + .circle::after {
+  background-color: var(--c15);
+}
+
+.theme-toggle > input:checked + .circle::before {
+  background-image: var(--icon-moon);
+  transform: translateX(3px);
 }
