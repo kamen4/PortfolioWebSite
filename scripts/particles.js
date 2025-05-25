@@ -1,7 +1,7 @@
 ;(function($) {
   const defaults = {
     n: 300,
-    maxN: 2000,
+    maxN: 1000,
     r: 2,
     maxSpeed: 0.5,
     linkDist: 100,
@@ -13,7 +13,6 @@
       const $canvas = $(this);
       const cfg = $.extend({}, defaults, {
         n: parseInt($canvas.data('n')),
-        maxN: parseInt($canvas.data('max-n')),
         r: parseFloat($canvas.data('r')),
         maxSpeed: parseFloat($canvas.data('max-speed')),
         linkDist: parseFloat($canvas.data('link-dist')),
@@ -26,14 +25,16 @@
       let mouse = { x: null, y: null };
       const $win = $(window);
 
-      cfg.n = Math.max(cfg.maxN, Math.round($win.height() * $win.width() / (1920*1080/cfg.n)));
+      cfg.n = Math.min(cfg.maxN, Math.round($win.height() * $win.width() / (1920*1080/cfg.n)));
 
       init();
 
       function init() {
         resizeCanvas();
         $win.on('resize', resizeCanvas);
-        $win.on('mousemove', onMouseMove);
+        if (!$.browser.mobile) {
+          $win.on('mousemove', onMouseMove);
+        }
         particles = generateParticles(cfg.n);
         requestAnimationFrame(animate);
       }
