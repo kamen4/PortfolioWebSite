@@ -14,12 +14,21 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <canvas id="main"></canvas>
+    <canvas
+      id="particles"
+      data-n="300"
+      data-r="2"
+      data-max-speed="0.5"
+      data-link-dist="100"
+      data-invert-color="false"
+    ></canvas>
+
     <div class="container">
       <div class="f400 name">Vladimir Gorbach</div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="scripts/particles.js"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>
