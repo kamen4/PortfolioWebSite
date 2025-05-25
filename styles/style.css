@@ -1,33 +1,19 @@
 :root {
-  --c1: #fff;
-  --c2: #eee;
-  --c3: #ddd;
-  --c4: #ccc;
-  --c5: #bbb;
-  --c6: #aaa;
-  --c7: #999;
-  --c8: #888;
-  --c9: #777;
-  --c10: #666;
-  --c11: #555;
-  --c12: #444;
-  --c13: #333;
-  --c14: #222;
-  --c15: #111;
-  --c16: #000;
+  color-scheme: light dark;
+  font-size: 100%;
 }
 
 * {
   margin: 0;
   padding: 0;
   text-decoration: none;
-  color: var(--c2);
+  color: light-dark(var(--c14), var(--c2));
 }
 
-#main {
+#particles {
   width: 100%;
   height: 100%;
-  background-color: var(--c15);
+  background-color: light-dark(var(--c1), var(--c15));
   position: absolute;
   overflow: hidden;
   z-index: -1;
@@ -42,6 +28,8 @@
 
 .name {
   display: flex;
-  margin: calc(50vh - 1em) auto 0 auto;
-  font-size: 4em;
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin: calc(50vh - 3rem) auto 0;
+  padding: 0 1rem;
+  line-height: 1.1;
 }
