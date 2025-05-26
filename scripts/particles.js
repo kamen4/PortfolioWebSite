@@ -7,19 +7,34 @@
     linkDist: 100,
     invertColor: false,
   };
+  
+  const toCamel = s => s.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
 
-  $.fn.particlesBg = function(options, cancel = null) {
+  const parsers = {
+    'n': v => parseInt(v, 10),
+    'max-n': v => parseInt(v, 10),
+    'r': v => parseFloat(v),
+    'max-speed': v => parseFloat(v),
+    'link-dist': v => parseFloat(v),
+    'invert-color': v => (v === true || v === 'true')
+  };
+
+  $.fn.particlesBg = function(opts = {}, cancel = null) {
     return this.each(function() {
+      const $el = $(this);
+      const cfg = { ...defaults, ...opts };
+      Object.entries(parsers).forEach(([attr, parse]) => {
+        const raw = $el.data(attr);
+        if (raw != null) {
+          const val = parse(raw);
+          if (typeof val === 'boolean' || !isNaN(val)) {
+            cfg[toCamel(attr)] = val;
+          }
+        }
+      });
+      
       const cancellation = cancel;
       const $canvas = $(this);
-      const cfg = $.extend({}, defaults, {
-        n: parseInt($canvas.data('n')),
-        r: parseFloat($canvas.data('r')),
-        maxSpeed: parseFloat($canvas.data('max-speed')),
-        linkDist: parseFloat($canvas.data('link-dist')),
-        invertColor: $canvas.data('invert-color') === true
-      }, options);
-
       const canvas = this;
       const ctx = canvas.getContext('2d');
       let particles = [];

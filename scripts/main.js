@@ -32,3 +32,5 @@ const setParticles = () => {
 
 initThemeToggle();
 setParticles();
+
+$('#name').typewriter({ speed: 120, startDelay: 500 });
