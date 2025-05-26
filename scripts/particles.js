@@ -8,8 +8,9 @@
     invertColor: false,
   };
 
-  $.fn.particlesBg = function(options) {
+  $.fn.particlesBg = function(options, cancel = null) {
     return this.each(function() {
+      const cancellation = cancel;
       const $canvas = $(this);
       const cfg = $.extend({}, defaults, {
         n: parseInt($canvas.data('n')),
@@ -111,6 +112,9 @@
       }
 
       function animate() {
+        if (cancellation && cancellation.token) {
+          return;
+        }
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         updateParticles();
         linkParticles();

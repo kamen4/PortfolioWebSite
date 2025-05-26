@@ -1,4 +1,5 @@
 var isDarkTheme;
+var currParticlesCancellation = null;
 
 const prefersDarkColorScheme = () => window && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
@@ -18,7 +19,16 @@ const initThemeToggle = () => {
 	});
 };
 
-const setParticles = () => $('#particles').particlesBg({ invertColor: !isDarkTheme });
+const setParticles = () => {
+	if (currParticlesCancellation == null) {
+		currParticlesCancellation = { token: false };
+	}
+	else {
+		currParticlesCancellation.token = true;
+		currParticlesCancellation = { token: false };
+	}
+	$('#particles').particlesBg({ invertColor: !isDarkTheme }, currParticlesCancellation);
+};
 
 initThemeToggle();
 setParticles();
