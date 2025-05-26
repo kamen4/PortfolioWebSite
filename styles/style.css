@@ -1,3 +1,6 @@
+@import url("roboto_mono_fonts.css");
+@import url("colors.css");
+
 :root {
   color-scheme: light dark;
   font-size: 100%;
@@ -32,7 +35,7 @@
   overflow: hidden;
 }
 
-.name {
+#name {
   display: flex;
   font-size: clamp(2rem, 6vw, 4rem);
   margin: calc(50vh - 3rem) auto 0;
