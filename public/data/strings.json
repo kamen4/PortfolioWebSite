@@ -1,0 +1,132 @@
+[
+  {
+    "displayName": "Approval Status",
+    "logicalName": "scn_approvalstatus",
+    "dataType": "Choice"
+  },
+  {
+    "displayName": "Broader value of the opportunity",
+    "logicalName": "scn_broadervalueoftheopportunity",
+    "dataType": "Text area"
+  },
+  {
+    "displayName": "Customer and opportunity/quote description",
+    "logicalName": "scn_customerandopportunityquotedescription",
+    "dataType": "Text area"
+  },
+  {
+    "displayName": "Discount description",
+    "logicalName": "scn_discountdescription",
+    "dataType": "Text area"
+  },
+  {
+    "displayName": "Discount item(s)",
+    "logicalName": "scn_discountitems",
+    "dataType": "Text area"
+  },
+  {
+    "displayName": "Further price and margin management",
+    "logicalName": "scn_furtherpriceandmarginmanagement",
+    "dataType": "Text area"
+  },
+  {
+    "displayName": "Other relevant details (if any)",
+    "logicalName": "scn_otherrelevantdetailsifany",
+    "dataType": "Text area"
+  },
+  {
+    "displayName": "Result in case of no discount",
+    "logicalName": "scn_resultincaseofnodiscount",
+    "dataType": "Text area"
+  },
+  {
+    "displayName": "Created On",
+    "logicalName": "createdon",
+    "dataType": "Date and time"
+  },
+  {
+    "displayName": "Modified On",
+    "logicalName": "modifiedon",
+    "dataType": "Date and time"
+  },
+  {
+    "displayName": "Discount decision deadline",
+    "logicalName": "scn_discountdecisiondeadline",
+    "dataType": "Date and time"
+  },
+  {
+    "displayName": "Is discount displayed to customer",
+    "logicalName": "scn_isdiscountdisplayedtocustomer",
+    "dataType": "Yes/no"
+  },
+  {
+    "displayName": "SM/AM commission",
+    "logicalName": "scn_smamcommission",
+    "dataType": "Whole number"
+  },
+  {
+    "displayName": "Markup",
+    "logicalName": "scn_markup",
+    "dataType": "Whole number"
+  },
+  {
+    "displayName": "Is markup applied for other project activities",
+    "logicalName": "scn_ismarkupappliedforotherprojectactivities",
+    "dataType": "Yes/no"
+  },
+  {
+    "displayName": "Is coef for PTE/on-demand positions applied",
+    "logicalName": "scn_iscoefforpteondemandpositionsapplied",
+    "dataType": "Yes/no"
+  },
+  {
+    "displayName": "Fix price",
+    "logicalName": "scn_fixprice",
+    "dataType": "Yes/no"
+  },
+  {
+    "displayName": "Allowed resources regions",
+    "logicalName": "scn_allowedresourcesregions",
+    "dataType": "Choice"
+  },
+  {
+    "displayName": "All previous Discounting policy steps are applied",
+    "logicalName": "scn_allpreviousdiscountingpolicystepsareapplied",
+    "dataType": "Yes/no"
+  },
+  {
+    "displayName": "Account",
+    "logicalName": "scn_account",
+    "dataType": "Lookup"
+  },
+  {
+    "displayName": "Work start month",
+    "logicalName": "scn_workstartmonth",
+    "dataType": "Date only"
+  },
+  {
+    "displayName": "Discount start month",
+    "logicalName": "scn_discountstartmonth",
+    "dataType": "Date only"
+  },
+  {
+    "displayName": "Discount end month",
+    "logicalName": "scn_discountendmonth",
+    "dataType": "Date only"
+  },
+  {
+    "displayName": "Quote",
+    "logicalName": "scn_quote",
+    "dataType": "Lookup"
+  },
+  {
+    "displayName": "Opportunity",
+    "logicalName": "scn_opportunity",
+    "dataType": "Lookup"
+  },
+  {
+    "displayName": "Owner",
+    "logicalName": "ownerid",
+    "dataType": "Owner"
+  }
+]

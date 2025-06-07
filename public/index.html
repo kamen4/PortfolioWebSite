@@ -16,9 +16,42 @@
   <body>
     <canvas id="particles" data-n="225" data-max-speed="0.3"></canvas>
 
-    <div class="container">
-      <div id="name" class="f200 glitch-text">Vladimir Gorbach</div>
+    <header></header>
+    <div class="container c-v">
+      <div id="name" class="f200">Vladimir Gorbach</div>
+      <div id="placeholder" class="f100" style="display: none">
+        Press any key to continue...
+      </div>
     </div>
+
+    <nav class="f400">
+      <div id="nav-grid" class="nav-grid" style="display: none">
+        <a href="blog.html" class="nav-block">
+          <h3>Blog</h3>
+          <p>
+            Reflection, exploration of concepts and ideas, articles on various
+            topics
+          </p>
+        </a>
+        <a href="projects.html" class="nav-block">
+          <h3>Projects</h3>
+          <p>
+            Personal and team pet projects in various languages and technologies
+          </p>
+        </a>
+        <a href="cv.html" class="nav-block">
+          <h3>CV</h3>
+          <p>
+            An overview of background, experiences, and the evolving journey of
+            skills
+          </p>
+        </a>
+        <a href="contacts.html" class="nav-block">
+          <h3>Contacts</h3>
+          <p>Social networks, ways to contact and communicate with me</p>
+        </a>
+      </div>
+    </nav>
 
     <label class="theme-toggle">
       <input id="theme-toggle" type="checkbox" />
@@ -26,9 +59,9 @@
     </label>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="scripts/detectmobilebrowser.js"></script>
-    <script src="scripts/particles.js"></script>
-    <script src="scripts/typewriter.js"></script>
+    <script src="scripts/libs/detectmobilebrowser.js"></script>
+    <script src="scripts/plugins/particles.js"></script>
+    <script src="scripts/plugins/typewriter.js"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>
