@@ -1,4 +1,4 @@
-(function($) {
+;(function($) {
   const defaults = {
     speed: 50,
     loop: false,
@@ -45,8 +45,9 @@
               type();
             }, cfg.speed);
           }
+          $el.html($el.text());
           if (typeof cfg.callback === 'function') {
-            cfg.callback.call($el[0]);
+            cfg.callback($el);
           }
         }
       };
